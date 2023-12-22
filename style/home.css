@@ -1,0 +1,402 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: Lato;
+  src: url(../asset/font/Lato/Lato-Regular.ttf);
+}
+@font-face {
+  font-family: Lato Light;
+  src: url(../asset/font/Lato/Lato-Light.ttf);
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  padding: 2rem;
+  font-family: Lato;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-inline: 0.5rem;
+}
+header img {
+  width: 12.5rem;
+  height: 2.4375rem;
+  flex-shrink: 0;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  column-gap: 2.75rem;
+}
+li {
+  list-style-type: none;
+  color: #1d2c3c;
+  font-size: 0.875rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+nav button {
+  width: 5.6875rem;
+  height: 2.5rem;
+  border-radius: 0.375rem;
+  border: 2px solid #646e7a;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+/* main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+} */
+
+/* ============================== */
+/*             MODAL             */
+.modal {
+  display: grid;
+  place-items: center;
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.modal-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: -1;
+}
+
+.modal-content {
+  display: grid;
+  grid-template-columns: 70% 30%;
+
+  width: 70%;
+  max-height: 90%;
+  overflow: auto;
+  border-radius: 0.375rem;
+  background: #fff;
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.05),
+    0px 15px 35px 0px rgba(43, 64, 78, 0.1);
+}
+
+/* ------------- */
+/*   CheckOut   */
+
+.checkout {
+  width: 100%;
+}
+
+.checkout h1 {
+  padding: 1.5rem 3rem;
+  color: #1d2c3c;
+  font-size: 1.875rem;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.section1 {
+  padding: 1.3rem 3rem;
+  /* padding-bottom: 2rem; */
+  border-top: 1px solid #f5f7fa;
+}
+
+.section2 {
+  padding: 1.3rem 3rem;
+  /* padding-bottom: 2rem; */
+  border-top: 1px solid #f5f7fa;
+  border-bottom: 1px solid #f5f7fa;
+}
+
+.section3 {
+  /* padding-bottom: 2rem; */
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  padding-bottom: 0.6rem;
+}
+.title span {
+  display: grid;
+  place-items: center;
+  width: 1.875rem;
+  height: 1.875rem;
+  color: #548bc5;
+  border-radius: 50%;
+  border: 2px solid #548bc5;
+}
+
+.inputSection {
+  display: grid;
+  grid-template-columns: auto auto;
+  row-gap: 0.95rem;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.45rem;
+}
+
+.section1 input {
+  width: 80%;
+  padding: 0.4rem 0.8rem;
+  height: 2.25rem;
+  border: 0;
+  border-radius: 0.25rem;
+  background: #edeff2;
+}
+
+.section2 .title {
+  padding-bottom: 1rem;
+}
+
+.section2 input {
+  width: 100%;
+  padding: 0.4rem 0.8rem;
+  height: 2.25rem;
+  border: 0;
+  border-radius: 0.25rem;
+  background: #edeff2;
+}
+
+.inputContainer input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.cc-input {
+  display: flex;
+  width: 100%;
+}
+
+.expiry-date-input {
+  position: relative;
+  width: 20%;
+}
+.expiry-date-input > div[data-name="customDate"] {
+  position: absolute;
+  width: 100%;
+  padding: 0.7rem;
+  color: #646e7a;
+  height: 2.25rem;
+  border: 0;
+  background: #edeff2;
+  font-size: 12px;
+  font-family: Lato;
+  z-index: 2;
+}
+
+#card-number {
+  width: 70%;
+  border-radius: 0;
+  outline: none;
+}
+#mm-yy {
+  position: relative;
+  border-radius: 0;
+  z-index: 1;
+  opacity: 1;
+}
+#cvc {
+  width: 10%;
+  border-radius: 0;
+  padding: 5px;
+  outline: none;
+}
+
+.buttonContainer {
+  padding-top: 2rem;
+  padding-inline: 3rem;
+}
+
+.checkout button {
+  width: 100%;
+  height: 3.25rem;
+  padding-inline: 3rem;
+  color: #fff;
+  font-size: 1.125rem;
+  border-radius: 0.3125rem;
+  background: #038e7d;
+  border: 0;
+  cursor: pointer;
+}
+
+.helpCenter {
+  display: flex;
+  column-gap: 0.5rem;
+  justify-content: center;
+  width: 100%;
+  padding-top: 1rem;
+}
+
+.sponsorSvg {
+  display: flex;
+  justify-items: center;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+/* ------------ */
+/*      Ad     */
+.ad {
+  width: 100%;
+  height: 100%;
+  padding: 2rem 2.75rem;
+  color: #fff;
+  border-radius: 0rem 0.375rem 0.375rem 0rem;
+  background: #1179bf;
+}
+
+.profile img {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+}
+
+.ad h4 {
+  color: #fff;
+  font-size: 1.25rem;
+  /* font-weight: 700; */
+}
+
+.price {
+  display: flex;
+  column-gap: 0.37rem;
+  font-family: Lato Light;
+  /* align-items: end; */
+}
+
+.price span {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding-top: 0.5rem;
+}
+
+.digit {
+  color: #fff;
+  font-size: 3.75rem;
+  font-weight: 300;
+}
+
+.price p {
+  align-self: self-end;
+  padding-bottom: 0.8rem;
+}
+
+.renewalAd {
+  color: #fff;
+  font-family: Lato light;
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.5rem; /* 150% */
+  letter-spacing: -0.0005rem;
+}
+
+.suggestions {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  padding-block: 2rem;
+}
+
+.suggestion {
+  display: flex;
+  column-gap: 0.7rem;
+}
+
+.offer1 {
+  width: 86%;
+  color: #fff;
+  font-family: Lato light;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.67;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid#B9F5FF;
+}
+
+.twenty {
+  color: #fff;
+  font-family: Lato;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.0005rem;
+}
+
+.offer1 a {
+  color: #fff;
+}
+
+.agency {
+  color: #fff;
+  font-family: Lato;
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.0005rem;
+}
+
+.adSection2 {
+  padding-top: 2.5rem;
+  width: 98%;
+}
+
+.comment {
+  color: #fff;
+  font-family: Lato light;
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.5rem; /* 133.333% */
+  letter-spacing: -0.00056rem;
+}
+
+.comment span {
+  color: #fff;
+  font-family: Lato;
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 1.5rem;
+  letter-spacing: -0.00056rem;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  column-gap: 0.8rem;
+  padding-top: 1rem;
+}
+
+.profile p {
+  color: #fff;
+  font-family: Lato;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.0005rem;
+}
